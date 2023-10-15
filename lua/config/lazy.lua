@@ -20,6 +20,17 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    {
+      "hrsh7th/nvim-cmp",
+      opts = function(_, opts)
+        local cmp = require("cmp")
+        opts.completion = {
+          completeopt = "menu,menuone,noinsert,noselect",
+        }
+        opts.mapping["<CR>"] = cmp.mapping.confirm({ select = false })
+        opts.mapping["<Tab>"] = cmp.mapping.confirm({ select = true })
+      end,
+    },
     -- import/override with your plugins
     { import = "plugins" },
   },
