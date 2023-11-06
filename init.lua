@@ -1,13 +1,23 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
+vim.opt.fillchars = {
+  horiz = "━",
+  horizup = "┻",
+  horizdown = "┳",
+  vert = "┃",
+  vertleft = "┫",
+  vertright = "┣",
+  verthoriz = "╋",
+}
+
 vim.opt.wrap = true
 vim.opt.scrolloff = 8
 vim.opt.mouse = ""
 
 -- unset this annoying thing
-vim.api.nvim_del_keymap("i", "<A-j>")
-vim.api.nvim_del_keymap("i", "<A-k>")
+--vim.api.nvim_del_keymap("i", "<A-j>")
+--vim.api.nvim_del_keymap("i", "<A-k>")
 
 vim.keymap.set({ "n", "v" }, ";", ":")
 vim.keymap.set({ "i", "c" }, "jk", "<Esc>")
